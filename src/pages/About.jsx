@@ -19,7 +19,7 @@ const About = () => {
               <Card.Text style={{ textAlign: "justify" }}>
                 At Decorosophy, we believe in the power of thoughtful design.
                 Our carefully chosen selection is a reflection of your unique
-                style and individuality, not just d├⌐cor. We carefully choose
+                style and individuality, not just decor. We carefully choose
                 each item by hand to make sure it symbolizes a timeless elegance
                 mixed with a modern sensibility.
               </Card.Text>
@@ -55,7 +55,7 @@ const About = () => {
                 a space that not only complements your style but also expresses
                 who you are. Our collection of decor items is intended to
                 inspire and elevate your area, transforming it into a
-                personalized refuge where you can genuinely feel at homeΓÇö
+                personalized refuge where you can genuinely feel at home
                 whether you're remodeling a single room or your entire house.
               </Card.Text>
             </Card.Body>
@@ -71,7 +71,7 @@ const About = () => {
               <Card.Title>Our Story</Card.Title>
               <Card.Text style={{ textAlign: "justify" }}>
                 Decorosophy was founded on the belief that home decor should be
-                more than just aesthetically pleasingΓÇöit should tell a story.
+                more than just aesthetically pleasing should tell a story.
                 We are passionate about helping our customers create spaces that
                 are not only beautiful but also meaningful and inspiring.
                 <br />

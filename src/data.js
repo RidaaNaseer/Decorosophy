@@ -6,7 +6,8 @@ export const categories = [
       {
         id: 101,
         name: "Sofa Set",
-        price: "$599",
+
+        price: "599890",
         image: "/CategoryImages/Sofa.jpg",
         gridSize: "large",
         thumbnails: [
@@ -26,7 +27,7 @@ export const categories = [
       {
         id: 102,
         name: "Dining Table",
-        price: "$399",
+        price: "39940",
         image: "/CategoryImages/tables.jpg",
         gridSize: "small",
         thumbnails: [
@@ -44,7 +45,7 @@ export const categories = [
       {
         id: 103,
         name: "King Bed",
-        price: "$799",
+        price: "799",
         image: "/CategoryImages/beds.jpg",
         gridSize: "medium",
         thumbnails: ["/CategoryImages/beds.jpg", "/CategoryImages/beds.jpg"],
@@ -60,7 +61,7 @@ export const categories = [
       {
         id: 104,
         name: "Recliner Chair",
-        price: "$299",
+        price: "299",
         image: "/CategoryImages/chair.jpg",
         gridSize: "medium",
         thumbnails: [
@@ -85,7 +86,7 @@ export const categories = [
       {
         id: 201,
         name: "Decorative Vases",
-        price: "$49",
+        price: "49",
         image: "/CategoryImages/Dvases.jpg",
         gridSize: "small",
         thumbnails: [
@@ -103,7 +104,7 @@ export const categories = [
       {
         id: 202,
         name: "Flower Vases",
-        price: "$59",
+        price: "59",
         image: "/CategoryImages/Fvase.jpg",
         gridSize: "large",
         thumbnails: [
@@ -127,7 +128,7 @@ export const categories = [
       {
         id: 301,
         name: "Scented Candle",
-        price: "$19",
+        price: "19",
         image: "/CategoryImages/Scandles.jpg",
         gridSize: "medium",
         thumbnails: [
@@ -146,7 +147,7 @@ export const categories = [
       {
         id: 302,
         name: "Decorative Candle",
-        price: "$29",
+        price: "29",
         image: "/CategoryImages/Dcandles.jpg",
         gridSize: "medium",
         thumbnails: [
@@ -171,7 +172,7 @@ export const categories = [
       {
         id: 401,
         name: "Table Lamp",
-        price: "$49",
+        price: "49",
         image: "/CategoryImages/Tlights.jfif",
         gridSize: "small",
         thumbnails: [
@@ -189,7 +190,7 @@ export const categories = [
       {
         id: 402,
         name: "Ceiling Light",
-        price: "$99",
+        price: "99",
         image: "/CategoryImages/Clights.jpg",
         gridSize: "small",
 
@@ -214,7 +215,7 @@ export const categories = [
       {
         id: 501,
         name: "Frames",
-        price: "$199",
+        price: "199",
         image: "/CategoryImages/painting.jpg",
         gridSize: "medium",
         thumbnails: [
@@ -232,7 +233,7 @@ export const categories = [
       {
         id: 502,
         name: "Modern Sculpture",
-        price: "$249",
+        price: "249",
         image: "/CategoryImages/sculp.jpg",
         gridSize: "medium",
         thumbnails: [

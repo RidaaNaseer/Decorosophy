@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button, Row, Col, Card, ListGroup } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cart/cartSlice";
 import Slider from "react-slick";
 import { categories } from "../data";
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [dragging, setDragging] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
   const product = categories
@@ -40,18 +42,13 @@ const ProductDetails = () => {
     draggable: true,
   };
 
-  const handleMouseDown = () => {
-    setDragging(false);
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
   };
 
-  const handleMouseMove = () => {
-    setDragging(true);
-  };
-
-  const handleMouseUp = (relatedProductId) => {
-    if (!dragging) {
-      navigate(`/product/${relatedProductId}`);
-    }
+  const handleProductClick = (relatedProductId) => {
+    navigate(`/product/${relatedProductId}`);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -65,7 +62,6 @@ const ProductDetails = () => {
                 alt={product.name}
                 style={{ width: "100%", height: "500px", objectFit: "fill" }}
               />
-
               <div className="d-flex justify-content-start mt-2">
                 {product.thumbnails.map((thumb, index) => (
                   <img
@@ -80,58 +76,28 @@ const ProductDetails = () => {
               </div>
             </div>
           </Col>
-
           <Col md={6}>
             <h2>{product.name}</h2>
             <h4 className="text-danger">{product.price}</h4>
             <p>Product Code: {product.id}</p>
 
-            <div>
-              <p>
-                <strong>Size:</strong>
-                {product.sizes ? (
-                  product.sizes.map((size, index) => (
-                    <Button
-                      key={index}
-                      variant="outline-secondary"
-                      className="me-2"
-                      style={{ margin: "0.5rem" }}
-                    >
-                      {size}
-                    </Button>
-                  ))
-                ) : (
-                  <span>No size options available</span>
-                )}
-              </p>
-            </div>
-
             <div className="d-flex align-items-center mb-3">
-              <Button variant="secondary" className="me-2">
+              <Button
+                variant="secondary"
+                className="me-2"
+                onClick={handleAddToCart}
+              >
                 Add to Cart
               </Button>
               <Button variant="outline-secondary">Add to Wishlist</Button>
             </div>
 
-            <Card className="mb-3 ">
+            <Card className="mb-3">
               <Card.Body>
                 <h5>Description</h5>
                 <p>{product.description}</p>
               </Card.Body>
             </Card>
-
-            {product.features && (
-              <ListGroup className="mb-3">
-                <ListGroup.Item>
-                  <strong>Features:</strong>
-                  <ul>
-                    {product.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                </ListGroup.Item>
-              </ListGroup>
-            )}
 
             <ListGroup>
               <ListGroup.Item>
@@ -152,14 +118,10 @@ const ProductDetails = () => {
               <div
                 key={relatedProduct.id}
                 className="p-3"
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={() => handleMouseUp(relatedProduct.id)}
+                onClick={() => handleProductClick(relatedProduct.id)}
+                style={{ cursor: "pointer" }}
               >
-                <Card
-                  className="mb-3"
-                  style={{ cursor: "pointer", border: "0px" }}
-                >
+                <Card className="mb-3" style={{ border: "0px" }}>
                   <Card.Img
                     src={relatedProduct.image}
                     alt={relatedProduct.name}

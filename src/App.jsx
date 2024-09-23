@@ -9,6 +9,7 @@ import Layout from "./components/Layout";
 import ProductDetails from "./pages/ProductDetails";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CartPage from "./components/CartPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/explore-collection" element={<ExploreCollection />} />
           <Route path="/product/:productId" element={<ProductDetails />} />
+          <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
     </Router>
