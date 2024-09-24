@@ -3,6 +3,44 @@ import { Button, Card, Row, Col, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
 import PopularCategories from "../components/PopularCategories";
+import styled, { keyframes } from "styled-components";
+import { bounce, tada } from "react-animations";
+
+const slideInLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const AnimatedTitle = styled.div`
+  animation: 2s ${slideInLeft} ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+`;
+
+const AnimatedText = styled.div`
+  animation: 2s ${slideInLeft} ease-out forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
+`;
+
+const AnimatedButton = styled.div`
+  animation: 2s ${slideInLeft} ease-out forwards;
+  animation-delay: 4s;
+  opacity: 0;
+`;
+
+const Bounce = styled.div`
+  animation: 5s ${keyframes`${bounce}`} infinite;
+`;
+const Tada = styled.div`
+  animation: 5s ${keyframes`${tada}`} infinite;
+`;
 
 const Home = () => {
   return (
@@ -34,22 +72,28 @@ const Home = () => {
                     zIndex: "5",
                   }}
                 >
-                  <Card.Title
-                    className="mt-2 text-dark"
-                    style={{
-                      fontFamily: "BlinkMacSystemFont",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Decorate Your Dream Space With Our Finest Collection
-                  </Card.Title>
-                  <Card.Text className="mb-4 text-dark">
-                    Explore our curated collections to discover the perfect
-                    pieces for your unique vision.
-                  </Card.Text>
-                  <Button as={Link} to="/explore-collection" variant="dark">
-                    Explore Collection
-                  </Button>
+                  <AnimatedTitle>
+                    <Card.Title
+                      className="mt-2 text-dark"
+                      style={{
+                        fontFamily: "BlinkMacSystemFont",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Decorate Your Dream Space With Our Finest Collection
+                    </Card.Title>
+                  </AnimatedTitle>
+                  <AnimatedText>
+                    <Card.Text className="mb-4 text-dark">
+                      Explore our curated collections to discover the perfect
+                      pieces for your unique vision.
+                    </Card.Text>
+                  </AnimatedText>
+                  <AnimatedButton>
+                    <Button as={Link} to="/explore-collection" variant="dark">
+                      Explore Collection
+                    </Button>
+                  </AnimatedButton>
                 </Card.Body>
               </div>
             </Col>
@@ -70,7 +114,9 @@ const Home = () => {
           <Row className="align-items-center justify-content-center px-5">
             <Col md={7} className="mb-3">
               <Card.Body>
-                <Card.Title className="fst-italic">Home Decor</Card.Title>
+                <Card.Title className="fst-italic">
+                  <Bounce>Home Decor</Bounce>
+                </Card.Title>
                 <Card.Text style={{ textAlign: "justify" }}>
                   At Decorosophy, we believe that every space tells a story, and
                   we're passionate about helping you create a home that speaks
@@ -90,14 +136,17 @@ const Home = () => {
                 </Card.Text>
               </Card.Body>
             </Col>
+
             <Col md={5} className="text-center">
-              <Image
-                src="/images/A1.jpg"
-                alt="Decorosophy"
-                roundedCircle
-                fluid
-                style={{ width: "70%", height: "300px", opacity: 0.8 }}
-              />
+              <Tada>
+                <Image
+                  src="/images/A1.jpg"
+                  alt="Decorosophy"
+                  roundedCircle
+                  fluid
+                  style={{ width: "70%", height: "300px", opacity: 0.8 }}
+                />
+              </Tada>
             </Col>
           </Row>
         </Card>

@@ -5,6 +5,29 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 import Slider from "react-slick";
 import { categories } from "../data";
+import styled, { keyframes } from "styled-components";
+
+const float = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+`;
+
+const FloatingCard = styled(Card)`
+  animation: ${float} 3s ease-in-out infinite;
+  transition: transform 1.05s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    animation: none;
+  }
+`;
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -98,7 +121,16 @@ const ProductDetails = () => {
                 <p>{product.description}</p>
               </Card.Body>
             </Card>
-
+            <Card className="mb-3">
+              <Card.Body>
+                <h5>Features</h5>
+                <ul>
+                  {product.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </Card.Body>
+            </Card>
             <ListGroup>
               <ListGroup.Item>
                 Delivered in 5 to 10 working days
@@ -121,21 +153,21 @@ const ProductDetails = () => {
                 onClick={() => handleProductClick(relatedProduct.id)}
                 style={{ cursor: "pointer" }}
               >
-                <Card className="mb-3" style={{ border: "0px" }}>
+                <FloatingCard className="mb-3" style={{ border: "0px" }}>
                   <Card.Img
                     src={relatedProduct.image}
                     alt={relatedProduct.name}
                     style={{
                       height: "200px",
                       width: "100%",
-                      objectFit: "contain",
+                      objectFit: "cover",
                     }}
                   />
                   <Card.Body className="text-center">
                     <Card.Title>{relatedProduct.name}</Card.Title>
                     <Card.Text>{relatedProduct.price}</Card.Text>
                   </Card.Body>
-                </Card>
+                </FloatingCard>
               </div>
             ))}
           </Slider>

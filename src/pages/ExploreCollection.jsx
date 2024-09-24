@@ -119,22 +119,22 @@ ${
             grid-row: span 3;
           }
 
-          .product-image-wrapper {
+           .product-image-wrapper {
             overflow: hidden;
             transition: transform 0.3s ease;
+            position: relative; 
           }
 
-          .product-image-wrapper:hover {
-            transform: scale(1.05);
+          /* Hover effect to scale the image */
+          .product-image-wrapper:hover img {
+            transform: scale(1.1); 
           }
 
           .product-image-wrapper img {
-            transition: transform 0.3s ease;
-            transform: translateY(0);
-          }
-
-          .product-image-wrapper:hover img {
-            transform: translateY(-10%);
+            transition: transform 0.3s ease; 
+            width: 100%;
+            height: 250px; 
+            object-fit: cover; 
           }
             `
 }

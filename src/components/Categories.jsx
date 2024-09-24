@@ -1,5 +1,28 @@
 import React from "react";
 import { Card, Button, Row, Col, Container } from "react-bootstrap";
+import styled, { keyframes } from "styled-components";
+
+const float = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+`;
+
+const FloatingCard = styled(Card)`
+  animation: ${float} 3s ease-in-out infinite;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    animation: none;
+  }
+`;
 
 const Categories = () => {
   return (
@@ -9,7 +32,7 @@ const Categories = () => {
         <Container fluid>
           <Row className="g-3">
             <Col md={6}>
-              <Card className="h-100">
+              <FloatingCard className="h-100">
                 <div style={{ position: "relative", height: "620px" }}>
                   <Card.Img
                     variant="top"
@@ -33,13 +56,13 @@ const Categories = () => {
                     <Button variant="light">Furniture</Button>
                   </Card.Body>
                 </div>
-              </Card>
+              </FloatingCard>
             </Col>
 
             <Col md={6}>
               <Row className="g-3">
                 <Col md={6}>
-                  <Card>
+                  <FloatingCard>
                     <div style={{ position: "relative", height: "300px" }}>
                       <Card.Img
                         variant="top"
@@ -63,11 +86,11 @@ const Categories = () => {
                         <Button variant="light">Candles</Button>
                       </Card.Body>
                     </div>
-                  </Card>
+                  </FloatingCard>
                 </Col>
 
                 <Col md={6}>
-                  <Card>
+                  <FloatingCard>
                     <div style={{ position: "relative", height: "300px" }}>
                       <Card.Img
                         variant="top"
@@ -91,11 +114,11 @@ const Categories = () => {
                         <Button variant="light">Vases</Button>
                       </Card.Body>
                     </div>
-                  </Card>
+                  </FloatingCard>
                 </Col>
 
                 <Col md={6}>
-                  <Card>
+                  <FloatingCard>
                     <div style={{ position: "relative", height: "300px" }}>
                       <Card.Img
                         variant="top"
@@ -119,11 +142,11 @@ const Categories = () => {
                         <Button variant="light">Art</Button>
                       </Card.Body>
                     </div>
-                  </Card>
+                  </FloatingCard>
                 </Col>
 
                 <Col md={6}>
-                  <Card>
+                  <FloatingCard>
                     <div style={{ position: "relative", height: "300px" }}>
                       <Card.Img
                         variant="top"
@@ -147,7 +170,7 @@ const Categories = () => {
                         <Button variant="light">Lighting</Button>
                       </Card.Body>
                     </div>
-                  </Card>
+                  </FloatingCard>
                 </Col>
               </Row>
             </Col>

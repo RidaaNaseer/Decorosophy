@@ -1,10 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 import { Card, Row, Col, Container, Button } from "react-bootstrap";
 
 export default function PopularCategory() {
@@ -14,44 +13,69 @@ export default function PopularCategory() {
     { id: 3, name: "End Tables", image: "/images/table.avif" },
     { id: 4, name: "Decorative Lighting", image: "/images/light.webp" },
     { id: 5, name: "Photo Frame", image: "/images/frame.jpg" },
+    { id: 7, name: "Beds", image: "/images/beds.webp" },
+    { id: 8, name: "Sofas", image: "/images/Sofas.jpg" },
+    { id: 9, name: "Scented Candle", image: "/images/SCandle.jpg" },
+    { id: 10, name: "lamps", image: "/images/lightss.jpg" },
     { id: 6, name: "Tin Candles", image: "/images/candle.jfif" },
   ];
+
+  const swiperRef = React.useRef(null);
+
+  const handleMouseEnter = () => {
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      swiperRef.current.autoplay.stop();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (swiperRef.current && swiperRef.current.autoplay) {
+      swiperRef.current.autoplay.start();
+    }
+  };
 
   return (
     <>
       <style>
         {`
-      .mySwiper {
-       padding: 5px;
-      }
-     
-      .swiper-button-next {
-        right: 150px; 
-        color: white;
-  }
-  .swiper-button-prev {
-    left: 130px; 
-     color: white;
-   
-  }
-      .swiper-pagination-bullet-active {
-        background-color: black; 
-      }
-    `}
+        .Swiper {
+          padding: 5px;
+        }
+
+        .swiper-button-next {
+          right: 150px; 
+          color: white;
+        }
+
+        .swiper-button-prev {
+          left: 130px; 
+          color: white;
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: black; 
+        }
+        `}
       </style>
       <div>
         <Container>
           <h2 className="text-center mt-2">Most Popular</h2>
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]}
             slidesPerView={4}
             spaceBetween={30}
             navigation
             pagination={{ clickable: true }}
-            className="mySwiper"
+            autoplay={{ delay: 1000, disableOnInteraction: true }}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            className="Swiper"
           >
             {categories.map((category) => (
-              <SwiperSlide key={category.id}>
+              <SwiperSlide
+                key={category.id}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Row className="mt-2 mb-5">
                   <Col>
                     <Card
@@ -64,7 +88,7 @@ export default function PopularCategory() {
                       <Card.Img
                         variant="top"
                         src={category.image}
-                        alt="Furniture"
+                        alt={category.name}
                         style={{
                           objectFit: "cover",
                           height: "100%",

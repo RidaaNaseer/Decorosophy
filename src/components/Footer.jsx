@@ -115,13 +115,13 @@ const Footer = () => {
               <Col xs={6} className="d-flex">
                 <ul className="list-unstyled">
                   <li>Chairs</li>
-                  <li>Furniture</li>
-                  <li>Lighting</li>
-                  <li>Accessories</li>
-                  <li>Garden</li>
-                  <li>Tables</li>
-                  <li>Children's room</li>
-                  <li>Cabinets</li>
+                  <li>Bed</li>
+                  <li>Sofas</li>
+                  <li>Candles</li>
+                  <li>Photo Frames</li>
+                  <li>Art</li>
+                  <li>Flower Vases</li>
+                  <li>Lights</li>
                 </ul>
               </Col>
             </Row>
