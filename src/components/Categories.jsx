@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button, Row, Col, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 const float = keyframes`
@@ -32,145 +33,155 @@ const Categories = () => {
         <Container fluid>
           <Row className="g-3">
             <Col md={6}>
-              <FloatingCard className="h-100">
-                <div style={{ position: "relative", height: "620px" }}>
-                  <Card.Img
-                    variant="top"
-                    src="/images/furniture.jpg"
-                    alt="Furniture"
-                    style={{
-                      objectFit: "cover",
-                      height: "100%",
-                      width: "100%",
-                    }}
-                  />
-                  <Card.Body
-                    className="text-center"
-                    style={{
-                      position: "absolute",
-                      top: "90%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                    }}
-                  >
-                    <Button variant="light">Furniture</Button>
-                  </Card.Body>
-                </div>
-              </FloatingCard>
+              <Link to="/furniture">
+                <FloatingCard className="h-100">
+                  <div style={{ position: "relative", height: "620px" }}>
+                    <Card.Img
+                      variant="top"
+                      src="/images/furniture.jpg"
+                      alt="Furniture"
+                      style={{
+                        objectFit: "cover",
+                        height: "100%",
+                        width: "100%",
+                      }}
+                    />
+                    <Card.Body
+                      className="text-center"
+                      style={{
+                        position: "absolute",
+                        top: "90%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <Button variant="light">Furniture</Button>
+                    </Card.Body>
+                  </div>
+                </FloatingCard>
+              </Link>
             </Col>
 
             <Col md={6}>
               <Row className="g-3">
                 <Col md={6}>
-                  <FloatingCard>
-                    <div style={{ position: "relative", height: "300px" }}>
-                      <Card.Img
-                        variant="top"
-                        src="/images/candles.jpg"
-                        alt="Candle"
-                        style={{
-                          objectFit: "cover",
-                          height: "100%",
-                          width: "100%",
-                        }}
-                      />
-                      <Card.Body
-                        className="text-center"
-                        style={{
-                          position: "absolute",
-                          top: "85%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                        }}
-                      >
-                        <Button variant="light">Candles</Button>
-                      </Card.Body>
-                    </div>
-                  </FloatingCard>
+                  <Link to="/candles">
+                    <FloatingCard>
+                      <div style={{ position: "relative", height: "300px" }}>
+                        <Card.Img
+                          variant="top"
+                          src="/images/candles.jpg"
+                          alt="Candle"
+                          style={{
+                            objectFit: "cover",
+                            height: "100%",
+                            width: "100%",
+                          }}
+                        />
+                        <Card.Body
+                          className="text-center"
+                          style={{
+                            position: "absolute",
+                            top: "85%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <Button variant="light">Candles</Button>
+                        </Card.Body>
+                      </div>
+                    </FloatingCard>
+                  </Link>
                 </Col>
 
                 <Col md={6}>
-                  <FloatingCard>
-                    <div style={{ position: "relative", height: "300px" }}>
-                      <Card.Img
-                        variant="top"
-                        src="/images/vase.jpg"
-                        alt="Vase"
-                        style={{
-                          objectFit: "cover",
-                          height: "100%",
-                          width: "100%",
-                        }}
-                      />
-                      <Card.Body
-                        className="text-center"
-                        style={{
-                          position: "absolute",
-                          top: "85%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                        }}
-                      >
-                        <Button variant="light">Vases</Button>
-                      </Card.Body>
-                    </div>
-                  </FloatingCard>
+                  <Link to="/vases">
+                    <FloatingCard>
+                      <div style={{ position: "relative", height: "300px" }}>
+                        <Card.Img
+                          variant="top"
+                          src="/images/vase.jpg"
+                          alt="Vase"
+                          style={{
+                            objectFit: "cover",
+                            height: "100%",
+                            width: "100%",
+                          }}
+                        />
+                        <Card.Body
+                          className="text-center"
+                          style={{
+                            position: "absolute",
+                            top: "85%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <Button variant="light">Vases</Button>
+                        </Card.Body>
+                      </div>
+                    </FloatingCard>
+                  </Link>
                 </Col>
 
                 <Col md={6}>
-                  <FloatingCard>
-                    <div style={{ position: "relative", height: "300px" }}>
-                      <Card.Img
-                        variant="top"
-                        src="/images/art.jpg"
-                        alt="Art"
-                        style={{
-                          objectFit: "cover",
-                          height: "100%",
-                          width: "100%",
-                        }}
-                      />
-                      <Card.Body
-                        className="text-center"
-                        style={{
-                          position: "absolute",
-                          top: "85%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                        }}
-                      >
-                        <Button variant="light">Art</Button>
-                      </Card.Body>
-                    </div>
-                  </FloatingCard>
+                  <Link to="/art">
+                    <FloatingCard>
+                      <div style={{ position: "relative", height: "300px" }}>
+                        <Card.Img
+                          variant="top"
+                          src="/images/art.jpg"
+                          alt="Art"
+                          style={{
+                            objectFit: "cover",
+                            height: "100%",
+                            width: "100%",
+                          }}
+                        />
+                        <Card.Body
+                          className="text-center"
+                          style={{
+                            position: "absolute",
+                            top: "85%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <Button variant="light">Art</Button>
+                        </Card.Body>
+                      </div>
+                    </FloatingCard>
+                  </Link>
                 </Col>
 
                 <Col md={6}>
-                  <FloatingCard>
-                    <div style={{ position: "relative", height: "300px" }}>
-                      <Card.Img
-                        variant="top"
-                        src="/images/lights.jpg"
-                        alt="Lighting"
-                        style={{
-                          objectFit: "cover",
-                          height: "100%",
-                          width: "100%",
-                        }}
-                      />
-                      <Card.Body
-                        className="text-center"
-                        style={{
-                          position: "absolute",
-                          top: "85%",
-                          left: "50%",
-                          transform: "translate(-50%, -50%)",
-                        }}
-                      >
-                        <Button variant="light">Lighting</Button>
-                      </Card.Body>
-                    </div>
-                  </FloatingCard>
+                  <Link to="/lighting">
+                    <FloatingCard>
+                      <div style={{ position: "relative", height: "300px" }}>
+                        <Card.Img
+                          variant="top"
+                          src="/images/lights.jpg"
+                          alt="Lighting"
+                          style={{
+                            objectFit: "cover",
+                            height: "100%",
+                            width: "100%",
+                          }}
+                        />
+                        <Card.Body
+                          className="text-center"
+                          style={{
+                            position: "absolute",
+                            top: "85%",
+                            left: "50%",
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <Button variant="light">Lighting</Button>
+                        </Card.Body>
+                      </div>
+                    </FloatingCard>
+                  </Link>
                 </Col>
               </Row>
             </Col>

@@ -95,37 +95,12 @@ const ExploreCollection = () => {
             background-color: #dc3545;
             color: #fff;
           }
-${
-  view === "grid" &&
-  `
-         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
-            grid-gap: 20px; 
-          }
-
-          .grid-item-small {
-            grid-column: span 1;
-            grid-row: span 3;
-          }
-
-          .grid-item-medium {
-            grid-column: span 2;
-            grid-row: span 3;
-          }
-
-          .grid-item-large {
-            grid-column: span 3;
-            grid-row: span 3;
-          }
-
-           .product-image-wrapper {
+             .product-image-wrapper {
             overflow: hidden;
             transition: transform 0.3s ease;
             position: relative; 
           }
 
-          /* Hover effect to scale the image */
           .product-image-wrapper:hover img {
             transform: scale(1.1); 
           }
@@ -136,6 +111,31 @@ ${
             height: 250px; 
             object-fit: cover; 
           }
+${
+  view === "grid" &&
+  `
+         .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+            grid-gap: 20px; 
+          }
+
+          .grid-item-small {
+            grid-column: span 2;
+            grid-row: span 3;
+          }
+
+          .grid-item-medium {
+            grid-column: span 2;
+            grid-row: span 3;
+          }
+
+          .grid-item-large {
+            grid-column: span 2;
+            grid-row: span 3;
+          }
+
+      
             `
 }
         `}

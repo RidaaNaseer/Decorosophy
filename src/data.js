@@ -5,9 +5,55 @@ export const categories = [
     products: [
       {
         id: 101,
+        name: "Oliver 2.0 Bed Set",
+        price: 96525,
+        originalPrice: 114500,
+        discount: "16% OFF",
+        image: "/images/beds.webp",
+        gridSize: "large",
+        thumbnails: [
+          "/images/beds.webp",
+          "/images/beds.webp",
+          "/images/beds.webp",
+        ],
+        description:
+          "A luxurious bed set with modern styling, featuring durable construction and sleek design.",
+        sizes: ["King", "Queen"],
+        availability: "In Stock",
+        features: [
+          "Solid wood frame",
+          "Premium upholstered headboard",
+          "Available in multiple finishes",
+        ],
+      },
+      {
+        id: 102,
+        name: "Sydney King Size Bed Set",
+        price: 111150,
+        originalPrice: 129000,
+        discount: "New Arrival",
+        image: "/images/chair.jpg",
+        gridSize: "large",
+        thumbnails: [
+          "/images/chair.jpg",
+          "/images/chair.jpg",
+          "/images/chair.jpg",
+        ],
+        description:
+          "Elegant king-sized bed set, perfect for a modern bedroom.",
+        availability: "Out of Stock",
+        features: [
+          "Spacious design",
+          "Soft upholstery with a luxury finish",
+          "Durable frame built to last",
+        ],
+      },
+      {
+        id: 103,
         name: "Sofa Set",
-
         price: "599890",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/Sofa.jpg",
         gridSize: "large",
         thumbnails: [
@@ -23,11 +69,14 @@ export const categories = [
           "Available in multiple colors",
           "Comfortable and spacious seating",
         ],
+        availability: "In Stock",
       },
       {
-        id: 102,
+        id: 104,
         name: "Dining Table",
         price: "39940",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/tables.jpg",
         gridSize: "small",
         thumbnails: [
@@ -36,45 +85,11 @@ export const categories = [
           "/CategoryImages/tables.jpg",
         ],
         description: "A stylish dining table with seating for six.",
+        availability: "In Stock",
         features: [
           "Seating for up to 6 people",
           "Scratch-resistant surface",
           "Elegant oak finish",
-        ],
-      },
-      {
-        id: 103,
-        name: "King Bed",
-        price: "799",
-        image: "/CategoryImages/beds.jpg",
-        gridSize: "medium",
-        thumbnails: ["/CategoryImages/beds.jpg", "/CategoryImages/beds.jpg"],
-        description: "A luxurious king-sized bed made from premium wood.",
-        sizes: ["King", "Queen"],
-        features: [
-          "Solid wood frame",
-          "Elegant modern design",
-          "Supports a variety of mattress types",
-        ],
-      },
-
-      {
-        id: 104,
-        name: "Recliner Chair",
-        price: "299",
-        image: "/CategoryImages/chair.jpg",
-        gridSize: "medium",
-        thumbnails: [
-          "/CategoryImages/chair.jpg",
-          "/CategoryImages/chair.jpg",
-          "/CategoryImages/chair.jpg",
-        ],
-        description:
-          "A soft recliner chair, perfect for relaxation and comfort.",
-        features: [
-          "Fully adjustable reclining feature",
-          "Soft and durable upholstery",
-          "Supports up to 250 lbs",
         ],
       },
     ],
@@ -87,6 +102,8 @@ export const categories = [
         id: 201,
         name: "Decorative Vases",
         price: "49",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/Dvases.jpg",
         gridSize: "small",
         thumbnails: [
@@ -100,11 +117,14 @@ export const categories = [
           "Durable ceramic material",
           "Perfect for home decor or gifting",
         ],
+        availability: "In Stock",
       },
       {
         id: 202,
         name: "Flower Vases",
         price: "59",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/Fvase.jpg",
         gridSize: "large",
         thumbnails: [
@@ -118,6 +138,7 @@ export const categories = [
           "Waterproof interior for real flowers",
           "Available in multiple colors",
         ],
+        availability: "In Stock",
       },
     ],
   },
@@ -129,6 +150,8 @@ export const categories = [
         id: 301,
         name: "Scented Candle",
         price: "19",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/Scandles.jpg",
         gridSize: "medium",
         thumbnails: [
@@ -143,11 +166,14 @@ export const categories = [
           "Long burn time (up to 40 hours)",
           "Eco-friendly soy wax",
         ],
+        availability: "In Stock",
       },
       {
         id: 302,
         name: "Decorative Candle",
         price: "29",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/Dcandles.jpg",
         gridSize: "medium",
         thumbnails: [
@@ -162,6 +188,7 @@ export const categories = [
           "Smokeless burn",
           "Ideal for decorative or gift purposes",
         ],
+        availability: "In Stock",
       },
     ],
   },
@@ -173,6 +200,8 @@ export const categories = [
         id: 401,
         name: "Table Lamp",
         price: "49",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/Tlights.jfif",
         gridSize: "small",
         thumbnails: [
@@ -186,14 +215,16 @@ export const categories = [
           "Adjustable neck for directional lighting",
           "Available in multiple colors",
         ],
+        availability: "In Stock",
       },
       {
         id: 402,
         name: "Ceiling Light",
         price: "99",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/Clights.jpg",
         gridSize: "small",
-
         thumbnails: [
           "/CategoryImages/Clights.jpg",
           "/CategoryImages/Clights.jpg",
@@ -205,6 +236,7 @@ export const categories = [
           "Adjustable brightness settings",
           "Sleek, modern design",
         ],
+        availability: "Out of Stock",
       },
     ],
   },
@@ -216,6 +248,8 @@ export const categories = [
         id: 501,
         name: "Frames",
         price: "199",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/painting.jpg",
         gridSize: "medium",
         thumbnails: [
@@ -226,20 +260,23 @@ export const categories = [
         description: "A striking frames that adds character to any space.",
         features: [
           "Original hand-painted design",
-          "All size, perfect for living rooms",
+          "All sizes, perfect for living rooms",
           "Comes framed your pictures and ready to hang",
         ],
+        availability: "In Stock",
       },
       {
         id: 502,
         name: "Modern Sculpture",
         price: "249",
+        originalPrice: 114500,
+        discount: "16% OFF",
         image: "/CategoryImages/sculp.jpg",
         gridSize: "medium",
         thumbnails: [
-          "//CategoryImages/sculp.jpg",
-          "//CategoryImages/sculp.jpg",
-          "//CategoryImages/sculp.jpg",
+          "/CategoryImages/sculp.jpg",
+          "/CategoryImages/sculp.jpg",
+          "/CategoryImages/sculp.jpg",
         ],
         description:
           "A contemporary sculpture to enhance the aesthetic of your home.",
@@ -248,6 +285,7 @@ export const categories = [
           "Hand-finished details",
           "Suitable for both indoor and outdoor display",
         ],
+        availability: "In Stock",
       },
     ],
   },

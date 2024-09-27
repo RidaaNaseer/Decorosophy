@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { Button, Card, Row, Col, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Categories from "../components/Categories";
 import PopularCategories from "../components/PopularCategories";
 import styled, { keyframes } from "styled-components";
@@ -43,6 +43,15 @@ const Tada = styled.div`
 `;
 
 const Home = () => {
+  const categoriesRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#categories") {
+      categoriesRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
     <>
       <div className="p-1 ">
@@ -101,7 +110,10 @@ const Home = () => {
         </Card>
       </div>
 
-      <Categories />
+      <div ref={categoriesRef}>
+        <Categories />
+      </div>
+
       <PopularCategories />
 
       <h2 className="text-center mt-2">
@@ -109,6 +121,7 @@ const Home = () => {
           About Us
         </Link>
       </h2>
+
       <div className="py-1">
         <Card className="border-0 p-3 h-100">
           <Row className="align-items-center justify-content-center px-5">
