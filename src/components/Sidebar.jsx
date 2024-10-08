@@ -77,10 +77,30 @@ const Sidebar = ({ onSelectCategory, onSelectSubcategory }) => {
           <Collapse in={openCategories.furniture}>
             <div id="furniture-subcategories">
               <ul className="list-unstyled ms-4">
-                <li onClick={() => handleSubcategoryClick("Sofa")}>Sofa</li>
-                <li onClick={() => handleSubcategoryClick("Beds")}>Beds</li>
-                <li onClick={() => handleSubcategoryClick("Tables")}>Tables</li>
-                <li onClick={() => handleSubcategoryClick("Chairs")}>Chairs</li>
+                <li
+                  className="subcategory-item"
+                  onClick={() => handleSubcategoryClick("Sofa")}
+                >
+                  Sofa
+                </li>
+                <li
+                  className="subcategory-item"
+                  onClick={() => handleSubcategoryClick("Beds")}
+                >
+                  Beds
+                </li>
+                <li
+                  className="subcategory-item"
+                  onClick={() => handleSubcategoryClick("Tables")}
+                >
+                  Tables
+                </li>
+                <li
+                  className="subcategory-item"
+                  onClick={() => handleSubcategoryClick("Chairs")}
+                >
+                  Chairs
+                </li>
               </ul>
             </div>
           </Collapse>

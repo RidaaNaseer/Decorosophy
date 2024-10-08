@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Form, Pagination, ButtonGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { categories } from "../data";
 import Sidebar from "../components/Sidebar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThLarge, faBars } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 const ITEMS_PER_PAGE = 7;
 
@@ -13,8 +13,23 @@ const ExploreCollection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedSubcategory, setSelectedSubcategory] = useState(null);
   const [view, setView] = useState("grid");
-
+  const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/categories")
+      .then((response) => {
+        if (typeof response.data === "object") {
+          setCategories(response.data);
+        } else {
+          console.error("Expected JSON but received:", response.data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -45,8 +60,10 @@ const ExploreCollection = () => {
 
   const selectedCategoryProducts =
     selectedCategory === "All"
-      ? categories.flatMap((category) => category.products)
-      : categories.find((category) => category.name === selectedCategory)
+      ? categories && categories.length > 0
+        ? categories.flatMap((category) => category.products)
+        : []
+      : categories?.find((category) => category.name === selectedCategory)
           ?.products || [];
 
   const filteredProducts = selectedSubcategory
@@ -155,11 +172,15 @@ ${
             onChange={handleCategoryChange}
           >
             <option value="All">All Categories</option>
-            {categories.map((category) => (
-              <option key={category.id} value={category.name}>
-                {category.name}
-              </option>
-            ))}
+            {categories && categories.length > 0 ? (
+              categories.map((category) => (
+                <option key={category.id} value={category.name}>
+                  {category.name}
+                </option>
+              ))
+            ) : (
+              <option disabled>Loading...</option>
+            )}
           </Form.Select>
 
           <Form.Control

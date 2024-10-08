@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   Button,
@@ -8,15 +8,29 @@ import {
   Breadcrumb,
   Container,
 } from "react-bootstrap";
-import { categories } from "../data"; 
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Furniture = () => {
   const [filter, setFilter] = useState("Availability");
   const [sortBy, setSortBy] = useState("Featured");
+  const [furnitureProducts, setFurnitureProducts] = useState([]);
 
-  const furnitureCategory = categories.find((category) => category.id === 1);
-  const furnitureProducts = furnitureCategory ? furnitureCategory.products : [];
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/categories")
+      .then((response) => {
+        const furnitureCategory = response.data.find(
+          (category) => category.id === "1"
+        );
+        setFurnitureProducts(
+          furnitureCategory ? furnitureCategory.products : []
+        );
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   const handleFilterChange = (filterOption) => {
     setFilter(filterOption);

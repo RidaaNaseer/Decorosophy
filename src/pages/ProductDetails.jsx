@@ -4,7 +4,7 @@ import { Button, Row, Col, Card, ListGroup } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 import Slider from "react-slick";
-import { categories } from "../data";
+import axios from "axios";
 import styled, { keyframes } from "styled-components";
 
 const float = keyframes`
@@ -35,33 +35,55 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const [selectedImage, setSelectedImage] = useState("");
-
-  const product = categories
-    .flatMap((category) => category.products)
-    .find((p) => p.id === parseInt(productId));
+  const [product, setProduct] = useState(null);
+  const [relatedProducts, setRelatedProducts] = useState([]);
 
   useEffect(() => {
-    if (product) {
-      setSelectedImage(product.image);
-    }
+    axios
+      .get("http://localhost:3000/categories")
+      .then((response) => {
+        let productData = null;
+        let categoryProducts = [];
+
+        response.data.forEach((category) => {
+          const foundProduct = category.products.find(
+            (p) => p.id === parseInt(productId)
+          );
+          if (foundProduct) {
+            productData = foundProduct;
+            categoryProducts = category.products;
+          }
+        });
+
+        if (productData) {
+          setProduct(productData);
+          setSelectedImage(productData.image);
+
+          const uniqueRelatedProducts = categoryProducts
+            .filter((p) => p.id !== productData.id)
+            .filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i);
+
+          setRelatedProducts(uniqueRelatedProducts);
+        } else {
+          console.error("Product not found");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching product data:", error);
+      });
   }, [productId]);
 
   if (!product) {
-    return <h2>Product not found!</h2>;
+    return <h2>Loading product details...</h2>;
   }
 
-  const relatedProducts = categories
-    .flatMap((category) => category.products)
-    .filter((p) => p.id !== parseInt(productId))
-    .slice(0, 8);
-
   const sliderSettings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     draggable: true,
   };
 

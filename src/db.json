@@ -1,0 +1,366 @@
+{
+  "pcategories": [
+    {
+      "id": "2",
+      "name": "ArmChair",
+      "image": "/images/chair.jpg"
+    },
+    {
+      "id": "3",
+      "name": "End Tables",
+      "image": "/images/table.avif"
+    },
+    {
+      "id": "4",
+      "name": "Decorative Lighting",
+      "image": "/images/light.webp"
+    },
+    {
+      "id": "5",
+      "name": "Photo Frame",
+      "image": "/images/frame.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Tin Candles",
+      "image": "/images/candle.jfif"
+    },
+    {
+      "id": "7",
+      "name": "Beds",
+      "image": "/images/beds.webp"
+    },
+    {
+      "id": "8",
+      "name": "Sofas",
+      "image": "/images/Sofas.jpg"
+    },
+    {
+      "id": "9",
+      "name": "Scented Candle",
+      "image": "/images/SCandle.jpg"
+    },
+    {
+      "id": "10",
+      "name": "Lamps",
+      "image": "/images/lightss.jpg"
+    },
+    {
+      "id": "1",
+      "name": "Ceramic Vases",
+      "image": "/images/cvase.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Furniture",
+      "products": [
+        {
+          "id": "101",
+          "name": "Bed Set",
+          "price": "96525",
+          "originalPrice": "114500",
+          "discount": "60% OFF",
+          "image": "/images/beds.webp",
+          "gridSize": "large",
+          "thumbnails": [
+            "/images/beds.webp",
+            "/images/beds.webp",
+            "/images/beds.webp"
+          ],
+          "description": "A luxurious bed set with modern styling, featuring durable construction and sleek design.",
+          "sizes": [
+            "King",
+            "Queen"
+          ],
+          "availability": "In Stock",
+          "features": [
+            "Solid wood frame",
+            "Premium upholstered headboard",
+            "Available in multiple finishes"
+          ]
+        },
+        {
+          "id": "102",
+          "name": "Arm Chair",
+          "price": "111150",
+          "originalPrice": "129000",
+          "discount": "New Arrival",
+          "image": "/images/chair.jpg",
+          "gridSize": "large",
+          "thumbnails": [
+            "/images/chair.jpg",
+            "/images/chair.jpg",
+            "/images/chair.jpg"
+          ],
+          "description": "Arm chair for lounge and bedrooms",
+          "availability": "Out of Stock",
+          "features": [
+            "Spacious design",
+            "Soft upholstery with a luxury finish",
+            "Durable frame built to last"
+          ]
+        },
+        {
+          "id": "103",
+          "name": "Sofa Set",
+          "price": "599890",
+          "originalPrice": "114500",
+          "discount": "60% OFF",
+          "image": "/CategoryImages/Sofa.jpg",
+          "gridSize": "large",
+          "thumbnails": [
+            "/CategoryImages/Sofa.jpg",
+            "/CategoryImages/Sofa.jpg",
+            "/CategoryImages/Sofa.jpg"
+          ],
+          "description": "A comfortable sofa set with modern design, perfect for living rooms.",
+          "sizes": [
+            "3-Seater",
+            "2-Seater",
+            "1-Seater"
+          ],
+          "availability": "In Stock",
+          "features": [
+            "Made with durable fabric",
+            "Available in multiple colors",
+            "Comfortable and spacious seating"
+          ]
+        },
+        {
+          "id": "104",
+          "name": "Dining Table",
+          "price": "39940",
+          "originalPrice": "114500",
+          "discount": "60% OFF",
+          "image": "/CategoryImages/tables.jpg",
+          "gridSize": "small",
+          "thumbnails": [
+            "/CategoryImages/tables.jpg",
+            "/CategoryImages/tables.jpg",
+            "/CategoryImages/tables.jpg"
+          ],
+          "description": "A stylish dining table with seating for six.",
+          "availability": "In Stock",
+          "features": [
+            "Seating for up to 6 people",
+            "Scratch-resistant surface",
+            "Elegant oak finish"
+          ]
+        },
+        {
+          "id": "105",
+          "name": "Coffee Table",
+          "price": "12500",
+          "originalPrice": "15000",
+          "discount": "20% OFF",
+          "image": "/images/coffee-table.jpg",
+          "gridSize": "small",
+          "thumbnails": [
+            "/images/coffee-table.jpg",
+            "/images/coffee-table.jpg",
+            "/images/coffee-table.jpg"
+          ],
+          "description": "A stylish coffee table with tempered glass top.",
+          "availability": "In Stock",
+          "features": [
+            "Tempered glass top",
+            "Metal legs",
+            "Modern design"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Vases",
+      "products": [
+        {
+          "id": "201",
+          "name": "Ceramic Vases",
+          "price": "49",
+          "gridSize": "large",
+          "image": "/CategoryImages/Dvases.jpg",
+          "thumbnails": [
+            "/CategoryImages/Dvases.jpg",
+            "/CategoryImages/Dvases.jpg",
+            "/CategoryImages/Dvases.jpg"
+          ],
+          "description": "Charming flower vases to add a touch of nature indoors.",
+          "features": [
+            "Classic design",
+            "Waterproof interior for real flowers",
+            "Available in multiple colors"
+          ],
+          "availability": "In Stock"
+        },
+        {
+          "id": "202",
+          "name": "Flower Vases",
+          "price": "59",
+          "originalPrice": "114500",
+          "discount": "16% OFF",
+          "image": "/CategoryImages/Fvase.jpg",
+          "gridSize": "large",
+          "thumbnails": [
+            "/CategoryImages/Fvase.jpg",
+            "/CategoryImages/Fvase.jpg",
+            "/CategoryImages/Fvase.jpg"
+          ],
+          "description": "Charming flower vases to add a touch of nature indoors.",
+          "features": [
+            "Classic design",
+            "Waterproof interior for real flowers",
+            "Available in multiple colors"
+          ],
+          "availability": "In Stock"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Candles",
+      "products": [
+        {
+          "id": "301",
+          "name": "Scented Candle",
+          "price": "19",
+          "originalPrice": "114500",
+          "discount": "16% OFF",
+          "image": "/CategoryImages/Scandles.jpg",
+          "gridSize": "medium",
+          "thumbnails": [
+            "/CategoryImages/Scandles.jpg",
+            "/CategoryImages/Scandles.jpg",
+            "/CategoryImages/Scandles.jpg"
+          ],
+          "description": "Relaxing scented candles with a range of calming fragrances.",
+          "features": [
+            "Available in lavender, vanilla, and jasmine scents",
+            "Long burn time (up to 40 hours)",
+            "Eco-friendly soy wax"
+          ],
+          "availability": "In Stock"
+        },
+        {
+          "id": "302",
+          "name": "Decorative Candle",
+          "price": "29",
+          "originalPrice": "114500",
+          "discount": "16% OFF",
+          "image": "/CategoryImages/Dcandles.jpg",
+          "gridSize": "medium",
+          "thumbnails": [
+            "/CategoryImages/Dcandles.jpg",
+            "/CategoryImages/Dcandles.jpg",
+            "/CategoryImages/Dcandles.jpg"
+          ],
+          "description": "Stylish decorative candles that also provide soothing light.",
+          "features": [
+            "Unique, elegant design",
+            "Smokeless burn",
+            "Ideal for decorative or gift purposes"
+          ],
+          "availability": "In Stock"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Lights",
+      "products": [
+        {
+          "id": "401",
+          "name": "Table Lamp",
+          "price": "49",
+          "originalPrice": "114500",
+          "discount": "16% OFF",
+          "image": "/CategoryImages/Tlights.jfif",
+          "gridSize": "small",
+          "thumbnails": [
+            "/CategoryImages/Tlights.jfif",
+            "/CategoryImages/Tlights.jfif",
+            "/CategoryImages/Tlights.jfif"
+          ],
+          "description": "Compact table lamps ideal for desks and nightstands.",
+          "features": [
+            "Compact, modern design",
+            "Adjustable neck for directional lighting",
+            "Available in multiple colors"
+          ],
+          "availability": "In Stock"
+        },
+        {
+          "id": "402",
+          "name": "Ceiling Light",
+          "price": "99",
+          "originalPrice": "114500",
+          "discount": "16% OFF",
+          "image": "/CategoryImages/Clights.jpg",
+          "gridSize": "small",
+          "thumbnails": [
+            "/CategoryImages/Clights.jpg",
+            "/CategoryImages/Clights.jpg",
+            "/CategoryImages/Clights.jpg"
+          ],
+          "description": "Modern ceiling lights to illuminate any room.",
+          "features": [
+            "Energy-efficient LED lighting",
+            "Adjustable brightness settings",
+            "Sleek, modern design"
+          ],
+          "availability": "Out of Stock"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Art",
+      "products": [
+        {
+          "id": "501",
+          "name": "Frames",
+          "price": "199",
+          "originalPrice": "114500",
+          "discount": "16% OFF",
+          "image": "/CategoryImages/painting.jpg",
+          "gridSize": "medium",
+          "thumbnails": [
+            "/CategoryImages/painting.jpg",
+            "/CategoryImages/painting.jpg",
+            "/CategoryImages/painting.jpg"
+          ],
+          "description": "A striking frames that adds character to any space.",
+          "features": [
+            "Original hand-painted design",
+            "All sizes, perfect for living rooms",
+            "Comes framed your pictures and ready to hang"
+          ],
+          "availability": "In Stock"
+        },
+        {
+          "id": "502",
+          "name": "Modern Sculpture",
+          "price": "249",
+          "originalPrice": "114500",
+          "discount": "16% OFF",
+          "image": "/CategoryImages/sculp.jpg",
+          "gridSize": "medium",
+          "thumbnails": [
+            "/CategoryImages/sculp.jpg",
+            "/CategoryImages/sculp.jpg",
+            "/CategoryImages/sculp.jpg"
+          ],
+          "description": "A contemporary sculpture to enhance the aesthetic of your home.",
+          "features": [
+            "Made from high-quality resin",
+            "Hand-finished details",
+            "Suitable for both indoor and outdoor display"
+          ],
+          "availability": "In Stock"
+        }
+      ]
+    }
+  ]
+}

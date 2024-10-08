@@ -164,6 +164,7 @@ const Footer = () => {
                 height="30"
                 alt="Visa"
                 className="me-2"
+                style={{ mixBlendMode: "multiply" }}
               />
               <img
                 src="/images/MC.png"
@@ -171,8 +172,15 @@ const Footer = () => {
                 width="40"
                 height="30"
                 className="me-2"
+                style={{ mixBlendMode: "multiply" }}
               />
-              <img src="/images/pp.png" width="40" height="30" alt="PayPal" />
+              <img
+                src="/images/pp.png"
+                width="40"
+                height="30"
+                alt="PayPal"
+                style={{ mixBlendMode: "multiply" }}
+              />
             </div>
           </Col>
         </Row>

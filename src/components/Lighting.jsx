@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   Button,
@@ -8,15 +8,25 @@ import {
   Breadcrumb,
   Container,
 } from "react-bootstrap";
-import { categories } from "../data";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Lighting = () => {
   const [filter, setFilter] = useState("Availability");
   const [sortBy, setSortBy] = useState("Featured");
+  const [lightingProducts, setLightingProducts] = useState([]);
 
-  const lightingCategory = categories.find((category) => category.id === 4);
-  const lightingProducts = lightingCategory ? lightingCategory.products : [];
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/categories")
+      .then((response) => {
+        const lightingCategory = response.data.find((category) => category.id === "4");
+        setLightingProducts(lightingCategory ? lightingCategory.products : []);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   const handleFilterChange = (filterOption) => {
     setFilter(filterOption);
@@ -79,10 +89,7 @@ const Lighting = () => {
       <Row>
         {lightingProducts.map((product) => (
           <Col md={4} className="mb-4" key={product.id}>
-            <Card
-              className="border-0"
-              style={{ width: "100%", height: "100%" }}
-            >
+            <Card className="border-0" style={{ width: "100%", height: "100%" }}>
               <div style={{ position: "relative" }}>
                 <Card.Img src={product.image} alt={product.name} />
                 {product.discount && (

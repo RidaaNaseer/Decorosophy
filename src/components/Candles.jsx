@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Card,
   Button,
@@ -8,15 +8,27 @@ import {
   Breadcrumb,
   Container,
 } from "react-bootstrap";
-import { categories } from "../data";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Candles = () => {
   const [filter, setFilter] = useState("Availability");
   const [sortBy, setSortBy] = useState("Featured");
+  const [candlesProducts, setCandlesProducts] = useState([]);
 
-  const candlesCategory = categories.find((category) => category.id === 3);
-  const candlesProducts = candlesCategory ? candlesCategory.products : [];
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/categories")
+      .then((response) => {
+        const candlesCategory = response.data.find(
+          (category) => category.id === "3"
+        );
+        setCandlesProducts(candlesCategory ? candlesCategory.products : []);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
 
   const handleFilterChange = (filterOption) => {
     setFilter(filterOption);

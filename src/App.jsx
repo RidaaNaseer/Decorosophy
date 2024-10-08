@@ -17,6 +17,7 @@ import Vases from "./components/Vases";
 import Art from "./components/Art";
 import Lighting from "./components/Lighting";
 
+
 function App() {
   const cursorRef = useRef(null);
 
@@ -70,6 +71,7 @@ function App() {
             <Route path="/vases" element={<Vases />} />
             <Route path="/art" element={<Art />} />
             <Route path="/lighting" element={<Lighting />} />
+       
           </Route>
         </Routes>
       </Router>

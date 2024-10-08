@@ -44,11 +44,14 @@ const Tada = styled.div`
 
 const Home = () => {
   const categoriesRef = useRef(null);
+  const mostpopularRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
     if (location.hash === "#categories") {
       categoriesRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (location.hash === "#most-popular") {
+      mostpopularRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
 
@@ -113,10 +116,11 @@ const Home = () => {
       <div ref={categoriesRef}>
         <Categories />
       </div>
+      <div ref={mostpopularRef}>
+        <PopularCategories />
+      </div>
 
-      <PopularCategories />
-
-      <h2 className="text-center mt-2">
+      <h2 className="text-center mt-5">
         <Link to="/about" style={{ textDecoration: "none", color: "inherit" }}>
           About Us
         </Link>

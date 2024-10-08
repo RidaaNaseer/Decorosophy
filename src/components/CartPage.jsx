@@ -44,6 +44,7 @@ const CartPage = () => {
                 {cartItems.map((item) => (
                   <tr key={item.id}>
                     <td>
+                      {console.log(item)}
                       <img
                         src={item.image}
                         alt={item.name}
